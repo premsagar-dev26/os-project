@@ -3,10 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f3f7f4">
+  <meta name="theme-color" content="#070a0f">
   <title>Startup — Boot Sequence Simulation</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="light-theme.css">
 </head>
 <body>
   <main class="screen" id="screen">
@@ -25,8 +24,8 @@
     <section class="phase" data-phase="1" aria-live="polite">
       <div class="firmware-layout">
         <div class="firmware-brand"><span class="firmware-emblem">U</span><div><b>UEFI FIRMWARE</b><small>Unified Extensible Firmware Interface</small></div></div>
-        <div class="firmware-main"><div class="micro-label">POST · POWER-ON SELF-TEST</div><h1>Checking hardware<span class="cursor">_</span></h1><p class="subtext">Firmware initializes essential devices and checks that the system can continue booting.</p>
-          <div class="check-list"><div class="check-row"><span class="check-icon">✓</span><span>Processor</span><b>DETECTED</b></div><div class="check-row"><span class="check-icon">✓</span><span>System memory</span><b>READY</b></div><div class="check-row"><span class="check-icon scanning">◌</span><span>Storage device</span><b class="scan-text">SCANNING</b></div></div>
+        <div class="firmware-main"><div class="micro-label">POST · POWER-ON SELF-TEST</div><h1>Checking hardware<span class="cursor">_</span></h1><p class="subtext">Firmware initializes essential[...]
+          <div class="check-list"><div class="check-row"><span class="check-icon">✓</span><span>Processor</span><b>DETECTED</b></div><div class="check-row"><span class="check-icon">✓</span><sp[...]
           <div class="firmware-progress"><div></div></div>
         </div><div class="firmware-foot"><span>FIRMWARE VERSION 2.4.1</span><span>INITIALIZING DEVICES</span></div>
       </div>
@@ -42,16 +41,16 @@
     </section>
 
     <section class="phase" data-phase="3" aria-live="polite">
-      <div class="kernel-layout"><div class="kernel-left"><div class="micro-label">BOOTLOADER HANDOFF</div><h1>Loading the<br>operating system</h1><p class="subtext">The bootloader places the kernel in memory and passes control to it.</p><div class="kernel-status"><span class="pulse"></span><span id="kernel-message">Loading kernel into memory</span></div></div>
-        <div class="memory-visual"><div class="memory-label"><span>MEMORY MAP</span><span id="memory-percent">0%</span></div><div class="memory-bank"><div class="memory-block filled"></div><div class="memory-block filled"></div><div class="memory-block" id="block3"></div><div class="memory-block" id="block4"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div></div><div class="mem-caption"><span>KERNEL</span><span>AVAILABLE MEMORY</span></div><div class="transfer"><span class="transfer-beam"></span><span class="transfer-packet"></span><span class="transfer-destination">RAM</span></div></div>
+      <div class="kernel-layout"><div class="kernel-left"><div class="micro-label">BOOTLOADER HANDOFF</div><h1>Loading the<br>operating system</h1><p class="subtext">The bootloader places the kern[...]
+        <div class="memory-visual"><div class="memory-label"><span>MEMORY MAP</span><span id="memory-percent">0%</span></div><div class="memory-bank"><div class="memory-block filled"></div><div cl[...]
       </div></section>
 
     <section class="phase" data-phase="4" aria-live="polite">
-      <div class="center-content ready-content"><div class="ready-orbit"><div class="ready-core">✓</div><span></span><span></span><span></span></div><div class="micro-label">KERNEL INITIALIZATION COMPLETE</div><h1>System ready</h1><p class="subtext">The kernel has initialized essential services.<br>The computer is ready for you to use.</p><div class="ready-badge"><span></span> OPERATING SYSTEM RUNNING</div></div>
+      <div class="center-content ready-content"><div class="ready-orbit"><div class="ready-core">✓</div><span></span><span></span><span></span></div><div class="micro-label">KERNEL INITIALIZATIO[...]
     </section>
 
     <footer class="bottomline">
-      <div class="timeline" aria-label="Boot sequence progress"><span class="timeline-fill" id="timeline-fill"></span><i class="tick on"></i><i class="tick"></i><i class="tick"></i><i class="tick"></i><i class="tick"></i></div>
+      <div class="timeline" aria-label="Boot sequence progress"><span class="timeline-fill" id="timeline-fill"></span><i class="tick on"></i><i class="tick"></i><i class="tick"></i><i class="tick"[...]
       <div class="footer-info">
         <span id="step-label">POWER ON</span><span id="elapsed">00:00</span>
         <button id="pause-button" type="button" aria-pressed="false" hidden>Ⅱ PAUSE</button>
