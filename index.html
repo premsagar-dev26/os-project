@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f3f7f4">
+  <title>Startup — Boot Sequence Simulation</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="light-theme.css">
+</head>
+<body>
+  <main class="screen" id="screen">
+    <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+    <header class="topline"><span class="machine"><i class="machine-dot"></i> WORKSTATION / SIM-01</span><span id="phase-count">STARTUP SIMULATION</span></header>
+
+    <section class="phase active" data-phase="0" aria-live="polite">
+      <div class="center-content power-content">
+        <div class="power-ring"><span class="power-symbol">⏻</span></div>
+        <div class="micro-label">POWER STATE</div><h1>Starting up</h1>
+        <p class="subtext">The computer has received power.<br>Its firmware is beginning to run.</p>
+        <div class="press-hint" id="start-hint"><span class="key">ENTER</span> or click anywhere to power on</div>
+      </div>
+    </section>
+
+    <section class="phase" data-phase="1" aria-live="polite">
+      <div class="firmware-layout">
+        <div class="firmware-brand"><span class="firmware-emblem">U</span><div><b>UEFI FIRMWARE</b><small>Unified Extensible Firmware Interface</small></div></div>
+        <div class="firmware-main"><div class="micro-label">POST · POWER-ON SELF-TEST</div><h1>Checking hardware<span class="cursor">_</span></h1><p class="subtext">Firmware initializes essential devices and checks that the system can continue booting.</p>
+          <div class="check-list"><div class="check-row"><span class="check-icon">✓</span><span>Processor</span><b>DETECTED</b></div><div class="check-row"><span class="check-icon">✓</span><span>System memory</span><b>READY</b></div><div class="check-row"><span class="check-icon scanning">◌</span><span>Storage device</span><b class="scan-text">SCANNING</b></div></div>
+          <div class="firmware-progress"><div></div></div>
+        </div><div class="firmware-foot"><span>FIRMWARE VERSION 2.4.1</span><span>INITIALIZING DEVICES</span></div>
+      </div>
+    </section>
+
+    <section class="phase" data-phase="2" aria-live="polite">
+      <div class="center-content">
+        <div class="drive-wrap"><div class="drive"><div class="drive-disc"></div><div class="drive-center"></div><div class="drive-arm"></div></div><div class="drive-led"></div></div>
+        <div class="micro-label">BOOT DEVICE · NVME0</div><h1>Finding the bootloader</h1>
+        <p class="subtext">Firmware checks the startup order, finds a bootable drive,<br>and starts its bootloader.</p>
+        <div class="device-card"><div class="device-icon">▰</div><div><b>Primary storage</b><small>NVMe solid-state drive</small></div><span class="device-check">✓</span></div>
+      </div>
+    </section>
+
+    <section class="phase" data-phase="3" aria-live="polite">
+      <div class="kernel-layout"><div class="kernel-left"><div class="micro-label">BOOTLOADER HANDOFF</div><h1>Loading the<br>operating system</h1><p class="subtext">The bootloader places the kernel in memory and passes control to it.</p><div class="kernel-status"><span class="pulse"></span><span id="kernel-message">Loading kernel into memory</span></div></div>
+        <div class="memory-visual"><div class="memory-label"><span>MEMORY MAP</span><span id="memory-percent">0%</span></div><div class="memory-bank"><div class="memory-block filled"></div><div class="memory-block filled"></div><div class="memory-block" id="block3"></div><div class="memory-block" id="block4"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div><div class="memory-block"></div></div><div class="mem-caption"><span>KERNEL</span><span>AVAILABLE MEMORY</span></div><div class="transfer"><span class="transfer-beam"></span><span class="transfer-packet"></span><span class="transfer-destination">RAM</span></div></div>
+      </div></section>
+
+    <section class="phase" data-phase="4" aria-live="polite">
+      <div class="center-content ready-content"><div class="ready-orbit"><div class="ready-core">✓</div><span></span><span></span><span></span></div><div class="micro-label">KERNEL INITIALIZATION COMPLETE</div><h1>System ready</h1><p class="subtext">The kernel has initialized essential services.<br>The computer is ready for you to use.</p><div class="ready-badge"><span></span> OPERATING SYSTEM RUNNING</div></div>
+    </section>
+
+    <footer class="bottomline">
+      <div class="timeline" aria-label="Boot sequence progress"><span class="timeline-fill" id="timeline-fill"></span><i class="tick on"></i><i class="tick"></i><i class="tick"></i><i class="tick"></i><i class="tick"></i></div>
+      <div class="footer-info">
+        <span id="step-label">POWER ON</span><span id="elapsed">00:00</span>
+        <button id="pause-button" type="button" aria-pressed="false" hidden>Ⅱ PAUSE</button>
+        <button id="skip-button" type="button">SKIP INTRO ↗</button>
+        <button id="replay-button" type="button" hidden>↺ RESTART</button>
+      </div>
+    </footer>
+    <div class="caption" id="caption">A simplified visual model. Startup steps vary across systems.</div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

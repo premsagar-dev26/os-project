@@ -1,0 +1,355 @@
+/* Brighter surface and clearer contrast for the boot simulation. */
+:root {
+  --bg: #f4f8f5;
+  --fg: #19343a;
+  --muted: #657876;
+  --cyan: #247d70;
+  --blue: #5578be;
+  --line: #24413d26;
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.screen {
+  background: radial-gradient(ellipse at 20% 22%, #e4f2e9 0, transparent 38%), radial-gradient(ellipse at 82% 76%, #e9effb 0, transparent 36%), #f7faf7;
+}
+
+.screen::before {
+  opacity: .48;
+  background-image: linear-gradient(#58756a0b 1px, transparent 1px), linear-gradient(90deg, #58756a0b 1px, transparent 1px);
+}
+
+.ambient {
+  display: none;
+}
+
+.topline {
+  border-bottom-color: #25463d1c;
+  color: #667a75;
+}
+
+.machine-dot {
+  box-shadow: 0 0 10px #247d7066;
+}
+
+.micro-label {
+  color: #247d70;
+}
+
+.subtext {
+  color: #607370;
+}
+
+.power-ring {
+  border-color: #247d7040;
+  box-shadow: 0 0 55px #247d700d, inset 0 0 35px #247d700d;
+}
+
+.power-ring:before,
+.power-ring:after {
+  border-color: #247d701c;
+}
+
+.power-symbol {
+  color: #247d70;
+  text-shadow: 0 0 20px #247d7040;
+}
+
+.press-hint {
+  color: #647771;
+}
+
+.key {
+  color: #34514b;
+  border-color: #9aada5;
+  background: #ffffff8c;
+}
+
+.firmware-layout {
+  background: #ffffffed;
+  border-color: #d7e4dc;
+  box-shadow: 0 25px 70px #29483b14;
+}
+
+.firmware-brand {
+  border-bottom-color: #dce7e0;
+}
+
+.firmware-emblem {
+  border-color: #247d70;
+  color: #247d70;
+}
+
+.firmware-brand small,
+.device-card small {
+  color: #70817c;
+}
+
+.check-row {
+  background: #f5f9f6;
+  border-color: #e2ebe5;
+  color: #35504b;
+}
+
+.check-row b,
+.check-icon {
+  color: #27836b;
+}
+
+.scan-text,
+.scanning {
+  color: #5578be !important;
+}
+
+.firmware-progress {
+  background: #e5ece8;
+}
+
+.firmware-foot {
+  color: #758680;
+}
+
+.drive {
+  border-color: #a9bbb4;
+  background: linear-gradient(145deg, #e8f1ec, #dce8e5);
+  box-shadow: 0 18px 38px #29483b1c;
+}
+
+.drive:before {
+  background: #ffffffb5;
+}
+
+.drive-disc {
+  border-color: #809892;
+  background: repeating-radial-gradient(circle, transparent 0 7px, #31534c12 8px 9px);
+}
+
+.drive-center,
+.drive-led {
+  background: #247d70;
+  box-shadow: 0 0 10px #247d7066;
+}
+
+.drive-arm {
+  background: #58736d;
+}
+
+.device-card {
+  border-color: #dce7e1;
+  background: #ffffffb8;
+  box-shadow: 0 8px 24px #29483b0a;
+}
+
+.device-icon {
+  color: #607873;
+}
+
+.device-check {
+  color: #247d70;
+}
+
+.kernel-status {
+  color: #607370;
+}
+
+.pulse {
+  background: #247d70;
+  box-shadow: 0 0 12px #247d7066;
+}
+
+.memory-visual {
+  border-color: #dce7e1;
+  background: #ffffffd9;
+  box-shadow: 0 20px 55px #29483b12;
+}
+
+.memory-label,
+.mem-caption {
+  color: #637773;
+}
+
+.memory-label span:last-child,
+.mem-caption span:first-child {
+  color: #247d70;
+}
+
+.memory-block {
+  border-color: #d0ddd6;
+  background: #edf3ef;
+}
+
+.memory-block.filled {
+  background: #c5e6da;
+  border-color: #54a68e;
+  box-shadow: inset 0 0 17px #247d7017;
+}
+
+.transfer {
+  border-top-color: #dbe6df;
+}
+
+.transfer-beam {
+  background: linear-gradient(90deg, transparent, #247d7070, transparent);
+}
+
+.transfer-packet {
+  background: #247d70;
+  box-shadow: 0 0 13px #247d7066;
+}
+
+.transfer-destination {
+  color: #6b8079;
+}
+
+.ready-core {
+  background: #d8eee5;
+  color: #247d70;
+  box-shadow: 0 0 40px #247d702b;
+}
+
+.ready-orbit span {
+  border-color: #247d7038;
+}
+
+.ready-orbit span:nth-child(4) {
+  border-color: #5578be40;
+}
+
+.ready-badge {
+  border-color: #247d7040;
+  color: #34685d;
+  background: #e5f3ed;
+}
+
+.ready-badge span {
+  background: #247d70;
+  box-shadow: 0 0 9px #247d7066;
+}
+
+.timeline:before {
+  background: #31534c2b;
+}
+
+.timeline-fill {
+  background: #247d70;
+  box-shadow: 0 0 8px #247d7066;
+}
+
+.tick {
+  background: #e1eae5;
+  border-color: #9aada5;
+}
+
+.tick.on {
+  background: #247d70;
+  border-color: #247d70;
+  box-shadow: 0 0 9px #247d7055;
+}
+
+.footer-info {
+  color: #647771;
+}
+
+.footer-info button {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: #42625a;
+  padding: 8px 11px;
+  transition: color .2s, background .2s, border-color .2s, transform .2s;
+}
+
+.footer-info button:hover:not(:disabled) {
+  color: #173f37;
+  background: #e4f1ea;
+  border-color: #c8ddd2;
+}
+
+.footer-info button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.footer-info button:focus-visible {
+  outline: 2px solid #5578be;
+  outline-offset: 2px;
+}
+
+.footer-info button[hidden] {
+  display: none;
+}
+
+#pause-button {
+  color: #fff;
+  background: #247d70;
+  border-color: #247d70;
+}
+
+#pause-button:hover:not(:disabled) {
+  color: #fff;
+  background: #1b695e;
+  border-color: #1b695e;
+}
+
+.caption {
+  color: #70817c;
+}
+
+.screen.paused *,
+.screen.paused *::before,
+.screen.paused *::after {
+  animation-play-state: paused !important;
+}
+
+@media (max-width: 560px) {
+  .topline,
+  .bottomline {
+    left: 18px;
+    right: 18px;
+  }
+
+  .topline {
+    font-size: 8px;
+  }
+
+  .footer-info {
+    flex-wrap: wrap;
+    gap: 5px 8px;
+    font-size: 8px;
+  }
+
+  .footer-info button {
+    padding: 7px 8px;
+    font-size: 8px;
+  }
+
+  .caption {
+    bottom: 91px;
+    padding: 0 18px;
+    line-height: 1.5;
+  }
+
+  .firmware-layout {
+    padding: 22px 20px;
+  }
+
+  .firmware-foot {
+    left: 20px;
+    right: 20px;
+    font-size: 7px;
+  }
+
+  .kernel-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .kernel-left h1 {
+    font-size: 38px;
+  }
+
+  .memory-visual {
+    padding: 15px;
+  }
+}
